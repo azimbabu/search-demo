@@ -1,0 +1,42 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.azimbabu'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '10'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(
+        'org.springframework.boot:spring-boot-starter',
+        'org.springframework.boot:spring-boot-starter-webflux',
+        'org.springframework.boot:spring-boot-starter-actuator',
+        'org.springframework.boot:spring-boot-configuration-processor',
+        'com.amazonaws:aws-java-sdk-elasticsearch:1.11.538',
+        'org.elasticsearch.client:elasticsearch-rest-client:6.5.4',
+        'org.elasticsearch.client:elasticsearch-rest-high-level-client:6.5.4',
+        'com.opencsv:opencsv:4.5',
+        'com.fasterxml.jackson.core:jackson-core:2.9.8',
+        'com.google.guava:guava:25.0-jre',
+        'net.logstash.logback:logstash-logback-encoder:4.9'
+    )
+
+    testCompile(
+            'org.junit.jupiter:junit-jupiter-api',
+            'org.mockito:mockito-core'
+    )
+
+    testCompile('org.springframework.boot:spring-boot-starter-test') {
+        // Exclude JUnit 4 (since we're using JUnit 5)
+        exclude group: 'junit', module: 'junit'
+    }
+
+    testRuntime('org.junit.jupiter:junit-jupiter-engine')
+}

@@ -1,0 +1,22 @@
+{
+    "kind":"Service",
+    "apiVersion":"v1",
+    "metadata":{
+        "name":"search-demo",
+        "labels":{
+            "app":"search-demo"
+        }
+    },
+    "spec":{
+        "ports": [
+            {
+                "port":8080,
+                "targetPort":"http-server"
+            }
+        ],
+        "selector":{
+            "app":"search-demo"
+        },
+        "type": "LoadBalancer"
+    }
+}

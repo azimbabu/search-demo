@@ -1,0 +1,37 @@
+{
+    "kind":"ReplicationController",
+    "apiVersion":"v1",
+    "metadata":{
+        "name":"search-demo",
+        "labels":{
+            "app":"search-demo"
+        }
+    },
+    "spec":{
+        "replicas":1,
+        "selector":{
+            "app":"search-demo"
+        },
+        "template":{
+            "metadata":{
+                "labels":{
+                    "app":"search-demo"
+                }
+            },
+            "spec":{
+                "containers":[
+                    {
+                        "name":"search-demo",
+                        "image":"azimbabu/search-demo-azim",
+                        "ports":[
+                            {
+                                "name":"http-server",
+                                "containerPort":8080
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

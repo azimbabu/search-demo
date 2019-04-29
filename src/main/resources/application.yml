@@ -1,0 +1,7 @@
+es:
+  serviceName: ${SEARCH_SERVICE_NAME:es}
+  region: ${SEARCH_REGION:us-east-1}
+  aesEndpoint: ${SEARCH_AES_ENDPOINT:https://search-demosearch-fzt7sqtlglab3p63td3fgv6d5e.us-east-1.es.amazonaws.com}
+  accessKey: ${AWS_ACCESS_KEY_ID:dummy-access-key-id}
+  secretKey: ${AWS_SECRET_ACCESS_KEY:dummy-secret-access-key}
+  maxSize: ${SEARCH_RESULT_MAX_SIZE:100}
